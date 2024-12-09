@@ -6,11 +6,25 @@ app.listen(3001, () => {
     console.log('Server running in port 3001')
 })
 
+import { Pool } from 'pg';
+const config = require('./config');
+
+const pool = new Pool({
+  user: config.dbUser,
+  host: config.dbHost,
+  database: config.dbName,
+  password: config.dbPassword,
+  port: config.dbPort,
+});
+
+// Test connection
+pool.connect()
+  .then(() => console.log('Connected to the database'))
+  .catch(err => console.error('Database connection error:', err.stack));
+
 // defining enpoints
 
-app.get('/genre', (req, res) => {
-    res.send('This is genre page') //test text
-})
+app.get('/genre', (req, res) => res.send('This is genre page'));
 
 app.get('/movie', (req, res) => {
     // Return all movies

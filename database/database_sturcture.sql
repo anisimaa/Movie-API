@@ -17,6 +17,7 @@ CREATE TABLE movie (
     movie_id int NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     movie_name VARCHAR(100) NOT NULL,
     movie_year INT NOT NULL,
+    movie_genre VARCHAR(100) NOT NULL,
     create_time DATE DEFAULT CURRENT_DATE
 );
 
@@ -41,5 +42,19 @@ VALUES
   ('Charlie Davis', 'charlied22', 'password122', 1988),
   ('Eve Black', 'eveblack55', 'password155', 1992),
   ('David Green', 'davidgreen77', 'password177', 1996);
+
+
+INSERT INTO genre (genre_name) VALUES 
+('drama'),('comedy'),('scifi'),('fantasy'),('action'),('triller');
+
+INSERT INTO movie (movie_name, movie_year, movie_genre) VALUES 
+('Inception', 2010, 'action'),
+('The Terminator', 1984, 'action'),
+('Tropic Thunder', 2008, 'comedy'),
+('Borat', 2006, 'comedy'),
+('Interstellar', 2014, 'drama'),
+('Joker', 2019, 'drama');
+
+
 
 
