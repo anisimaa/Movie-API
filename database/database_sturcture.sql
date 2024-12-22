@@ -56,5 +56,5 @@ INSERT INTO movie (movie_name, movie_year, movie_genre) VALUES
 ('Joker', 2019, 'drama');
 
 
-ALTER USER postgres WITH PASSWORD 'PostgreLocal';
+
 
